@@ -26,7 +26,8 @@ admin.controller('CubeCtrl', ['$scope', 'Cube', 'Connection', 'AlertService', '$
       ];
       $scope.templates = {
         'relational': 'assets/app/views/cube_relational.html',
-        'cube_join': 'assets/app/views/cube_join.html'
+        'cube_join': 'assets/app/views/cube_join.html',
+        'url': 'assets/app/views/cube_url.html'
       };
       $scope.loadCubeFields = function (ind) {
         if ($scope.cube.relationship[ind].cube) {

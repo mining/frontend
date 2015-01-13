@@ -1,0 +1,26 @@
+<div class="form-group">
+    <label for="cube_connection" translate>URL <span class="required">*</span></label>
+	<input type="text" id="cube_connection" ng-model="cube.connection" class="form-control" placeholder="http://..." required>
+    <label for="cube_url_type" translate>URL Type</label>
+    <select class="form-control" ui-select2 id="cube_url_type" ng-model="cube.url_type" required>
+        <option value="" selected="selected" translate></option>
+        <option ng-repeat="t in url_types" value="[[ t.key ]]">[[ t.val ]]</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="cube_schedule_type" translate>Scheduler</label>
+    <select class="form-control" ui-select2 id="cube_schedule_type" ng-change="changeSchedulerType()"
+            ng-model="cube.scheduler_type">
+        <option value="" selected="selected" translate>No</option>
+        <option ng-repeat="t in scheduler_types" value="[[ t.key ]]">[[ t.val ]]</option>
+    </select>
+
+    <div ng-show="show_h">
+        <label translate>Hour</label><input class="form-control" id="hour" ng-model="$parent.hour" type="number" min="0"
+                                  max="23"/>
+    </div>
+    <div ng-show="show_m">
+        <label translate>Min</label><input class="form-control" id="min" ng-model="$parent.min" type="number" min="0"
+            max="999999"/>
+    </div>
+</div>

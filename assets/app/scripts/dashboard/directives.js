@@ -27,7 +27,7 @@
 
     var linker = function($scope, element, attrs) {
       var dashboard_element = JSON.parse(attrs.element);
-      var API_URL = "ws://"+ location.host +"/stream/data/" + dashboard_element.slug + "?";
+      var API_URL = "ws://"+ location.host +"/data/" + dashboard_element.slug + "?";
       for (var key in $scope.$parent.filters[dashboard_element]){
         API_URL += key + "=" + $scope.$parent.filters[dashboard_element.slug][key] + "&";
       }

@@ -27,7 +27,7 @@ dashboard
           var prot = 'ws';
           if (window.protocol == 'https')
             prot = 'wss';
-          var API_URL = prot + "://" + location.host + "/stream/data/" + el.slug + "?";
+          var API_URL = prot + "://" + location.host + "/data/" + el.slug + "?";
           for (var key in el.filters) {
             API_URL += key + "=" + el.filters[key] + "&";
           }
@@ -152,10 +152,11 @@ dashboard
         };
 
         $scope.export = function (el, type, link) {
-          var url = link + '.' + type + '?';
+          var url = link + '?';
           for (var key in el.filters) {
             url += key + "=" + el.filters[key] + "&";
           }
+		  url += "download=" + type;
           window.open(url);
         };
         $scope.removeOrder = function (el, field) {
@@ -397,7 +398,7 @@ dashboard
           var prot = 'ws';
           if (window.protocol == 'https')
             prot = 'wss';
-          var API_URL = prot + "://" + location.host + "/stream/data/" + el.slug + "?";
+          var API_URL = prot + "://" + location.host + "/data/" + el.slug + "?";
           API_URL += 'fields=' + el.widgets[widget_index].field + '&';
           API_URL += 'limit=' + false + '&';
           API_URL += 'groupby=' + el.widgets[widget_index].field;
@@ -429,7 +430,7 @@ dashboard
           var prot = 'ws';
           if (window.protocol == 'https')
             prot = 'wss';
-          var API_URL = prot + "://" + location.host + "/stream/data/" + el.slug + "?";
+          var API_URL = prot + "://" + location.host + "/data/" + el.slug + "?";
           for (var key in el.filters) {
             API_URL += key + "=" + el.filters[key] + "&";
           }
@@ -477,7 +478,7 @@ dashboard
           var prot = 'ws';
           if (window.protocol == 'https')
             prot = 'wss';
-          var API_URL = prot + "://" + location.host + "/stream/data/" + el.slug + "?";
+          var API_URL = prot + "://" + location.host + "/data/" + el.slug + "?";
           for (var key in el.filters) {
             API_URL += key + "=" + el.filters[key] + "&";
           }

@@ -225,10 +225,10 @@
               <a class="btn btn-default dropdown-toggle" title="Export"><i class="fa fa-download"></i>  <span class="caret"></span></a>
               <ul class="dropdown-menu dropdown-menu-right">
                 <li>
-                  <a ng-show="e.total_rows < 65536" class="export-xls" id="export-xls-[[ e.slug ]]" ng-click="export(e, 'xls','/export/data/'+[[ e.slug ]])"><i class="fa fa-table"></i> XLS</a>
+                  <a ng-show="e.total_rows < 65536" class="export-xls" id="export-xls-[[ e.slug ]]" ng-click="export(e, 'xls','/data/'+[[ e.slug ]])"><i class="fa fa-table"></i> XLS</a>
                 </li>
                 <li>
-                  <a class="export-csv" id="export-csv-[[ e.slug ]]" ng-click="export(e, 'csv','/export/data/'+[[ e.slug ]])"><i class="fa fa-file-text-o"></i> CSV</a>
+                  <a class="export-csv" id="export-csv-[[ e.slug ]]" ng-click="export(e, 'csv','/data/'+[[ e.slug ]])"><i class="fa fa-file-text-o"></i> CSV</a>
                 </li>
               </ul>
             </div>

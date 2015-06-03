@@ -44,5 +44,9 @@
     "angular-strap": "~2.0.0",
     "angular-gettext": "~0.2.9",
     "select2": "~3.5.2"
+  },
+  "resolutions": {
+    "angular": ">=1.2.0",
+    "select2": "~3.5.2"
   }
 }

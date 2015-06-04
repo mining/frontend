@@ -10,6 +10,7 @@ dashboard
         $rootScope.inDashboard = true;
 
         $scope.filter_name = undefined;
+        $scope.has_geo = window.has_geo;
 
         $scope.gotoBottom = function (hash) {
           $location.hash(hash);

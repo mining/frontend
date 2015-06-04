@@ -235,6 +235,7 @@
     <script>
       window.protocol = '{{ protocol }}';
       window.lang = '{{ lang }}';
+      window.has_geo = {{ 'true' if has_geo else 'false' }};
       $(function() {
         $.ajax({
             'url':'/api/user/session',

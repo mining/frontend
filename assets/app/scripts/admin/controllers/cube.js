@@ -2,6 +2,19 @@
 admin.controller('CubeCtrl', ['$scope', 'Cube', 'Connection', 'AlertService', '$timeout', '$rootScope', '$http',
     function ($scope, Cube, Connection, AlertService, $timeout, $rootScope, $http) {
       $rootScope.inSettings = true;
+      $scope.OMLeditorOptions = {
+        lineWrapping: true,
+        lineNumbers: true,
+        readOnly: false,
+        mode: 'text/x-lua',
+        onLoad: function (editor) { // FIX TEMP ISSUE: https://github.com/angular-ui/ui-codemirror/issues/35
+          editor.on('blur', function () {
+            $timeout(function () {
+              $scope.cube.oml = editor.getValue();
+            });
+          })
+        }
+      };
       $scope.editorOptions = {
         lineWrapping: true,
         lineNumbers: true,

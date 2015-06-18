@@ -20,10 +20,23 @@
                     <option value="" selected="selected"></option>
                     <option value="relational" translate>Relational</option>
                     <option value="cube_join" translate>Cube Join</option>
-                    <option value="relational_spatial" ng-show="has_geo" translate>Relational (Spatial)</option>
-                    <option value="cube_join_spatial" ng-show="has_geo" translate>Cube Join (Spatial)</option>
                     <option value="url" translate>URL</option>
                 </select>
+            </div>
+            <div class="checkbox" ng-show="has_geo">
+                <label>
+                    <input type="checkbox" ng-model="cube.spatial"> <span translate>Spatial</span>
+                </label>
+            </div>
+            <div ng-if="cube.spatial">
+                <div class="form-group" >
+                    <label for="cube_geom" translate>Geometry Field</label>
+                    <input type="text" id="cube_geom" ng-model="cube.geom" class="form-control" required>
+                </div>
+                <div class="form-group" >
+                    <label for="cube_crs" translate>Coordinate Reference System</label>
+                    <input type="text" id="cube_crs" ng-model="cube.crs" class="form-control" required>
+                </div>
             </div>
             <div ng-include="templates[cube.type]" id="cube_form">
             </div>

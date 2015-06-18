@@ -230,7 +230,7 @@
                 <li>
                   <a class="export-csv" id="export-csv-[[ e.slug ]]" ng-click="export(e, 'csv','/data/'+[[ e.slug ]])"><i class="fa fa-file-text-o"></i> CSV</a>
                 </li>
-                <li ng-show="has_geo && e.cube.type.indexOf('spatial') != -1">
+                <li ng-show="has_geo && e.cube.spatial">
                   <a class="export-csv" id="export-geojson-[[ e.slug ]]" ng-click="export(e, 'geojson','/data/'+[[ e.slug ]])"><i class="fa fa-globe"></i> GeoJSON</a>
                 </li>
               </ul>

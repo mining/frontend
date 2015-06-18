@@ -26,7 +26,6 @@ admin.controller('CubeCtrl', ['$scope', 'Cube', 'Connection', 'AlertService', '$
       ];
       $scope.templates = {
         'relational': 'assets/app/views/cube_relational.html',
-        'relational_spatial': 'assets/app/views/cube_relational_spatial.html',
         'cube_join': 'assets/app/views/cube_join.html',
         'url': 'assets/app/views/cube_url.html'
       };

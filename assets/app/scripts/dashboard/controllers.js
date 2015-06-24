@@ -30,7 +30,7 @@ dashboard
             prot = 'wss';
           var API_URL = prot + "://" + location.host + "/data/" + el.slug + "?";
           for (var key in el.filters) {
-            API_URL += key + "=" + el.filters[key] + "&";
+            API_URL += key + "=" + encodeURIComponent(el.filters[key]) + "&";
           }
           API_URL += 'page=' + el.current_page + "&";
           if (el.orderby)
@@ -320,6 +320,16 @@ dashboard
               }
             }
           });
+        }
+
+        $scope.available_operators = $rootScope.operators;
+
+        $scope.changeFilterField = function(el) {
+          if(el.filter_field == el.cube.geom) {
+            $scope.available_operators = $rootScope.operators.concat($rootScope.geo_operators);
+          } else {
+            $scope.available_operators = $rootScope.operators;
+          }
         }
 
         $($scope.selected_dashboard.element).each(function (ind, val) {

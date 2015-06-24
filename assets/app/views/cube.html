@@ -23,7 +23,7 @@
                     <option value="url" translate>URL</option>
                 </select>
             </div>
-            <div class="checkbox" ng-show="has_geo">
+            <div class="checkbox" ng-show="has_geo && cube.type">
                 <label>
                     <input type="checkbox" ng-model="cube.spatial"> <span translate>Spatial</span>
                 </label>
@@ -38,6 +38,10 @@
                     <input type="text" id="cube_crs" ng-model="cube.crs" class="form-control" required>
                 </div>
             </div>
+			<div class="form-group" ng-show="cube.type">
+				<label for="cube_oml">OML</label>
+				<textarea ui-codemirror="OMLeditorOptions" id="cube_oml" ng-model="cube.oml"></textarea>
+			</div>
             <div ng-include="templates[cube.type]" id="cube_form">
             </div>
             <button type="submit" class="btn btn-primary" translate>Force Save

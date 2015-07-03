@@ -42,7 +42,7 @@ var auth = angular.module('miningApp.auth', [])
       };
     }];
 
-    $httpProvider.responseInterceptors.push(logsOutUserOn401);
+    $httpProvider.interceptors.push(logsOutUserOn401);
   }])
   .run(['$rootScope', '$location', 'AuthenticationService', 'getCurrentUser', 'AlertService', 'newUser',
     function ($rootScope, $location, AuthenticationService, getCurrentUser, AlertService, newUser) {
